@@ -1,0 +1,18 @@
+<div class="login-container">
+    <i class="fas fa-user-lock"></i> <!-- Icône de verrou -->
+    <h4>Connectez Vous</h4>
+    <form #f="ngForm" (ngSubmit)="login(f.value)">
+        <div class="mb-4">
+            <label class="form-label">Username</label>
+            <input type="text" class="form-control" name="username" ngModel>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Mot de passe</label>
+            <input type="password" class="form-control" name="password" ngModel>
+        </div>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary"> Se Connecter</button>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,64 @@
+<div class="container mt-4">
+    <h3 class="mb-3">Ajouter une Réservation</h3>
+    <form (ngSubmit)="addReservation()">
+      <div class="mb-3">
+        <label for="date_res" class="form-label">Date</label>
+        <input
+          type="date"
+          class="form-control"
+          id="date_res"
+          [(ngModel)]="newReservation.date_res"
+          name="date_res"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="heure_debut" class="form-label">Heure Début</label>
+        <input
+          type="number"
+          class="form-control"
+          id="heure_debut"
+          [(ngModel)]="newReservation.heure_debut"
+          name="heure_debut"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="heure_fin" class="form-label">Heure Fin</label>
+        <input
+          type="number"
+          class="form-control"
+          id="heure_fin"
+          [(ngModel)]="newReservation.heure_fin"
+          name="heure_fin"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="user" class="form-label">Adhérant</label>
+        <select
+          class="form-select"
+          id="user"
+          [(ngModel)]="newReservation.user"
+          name="user"
+          required
+        >
+          <option *ngFor="let adh of adherants" [ngValue]="adh">{{ adh.nom }}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="terrain" class="form-label">Terrain</label>
+        <select
+          class="form-select"
+          id="terrain"
+          [(ngModel)]="newReservation.ter"
+          name="ter"
+          required
+        >
+          <option *ngFor="let ter of terrains" [ngValue]="ter">{{ ter.nom }}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-success">Ajouter Réservation</button>
+    </form>
+  </div>
+  

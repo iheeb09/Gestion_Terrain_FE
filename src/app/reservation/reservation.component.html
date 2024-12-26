@@ -1,0 +1,36 @@
+<div class="container mt-4">
+    <h3 class="mb-3">Liste des Réservations</h3>
+    <a routerLink="/AddRes" class="btn btn-primary">Ajouter une réservation</a>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Date</th>
+          <th>Heure Début</th>
+          <th>Heure Fin</th>
+          <th>Adhérant</th>
+          <th>Terrain</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reservation of reservations; let i = index">
+          <td>{{ reservation.id}}</td>
+          <td>{{ reservation.date_res }}</td>
+          <td>{{ reservation.heure_debut }}</td>
+          <td>{{ reservation.heure_fin }}</td>
+          <td>{{ reservation.user.nom }}</td>
+          <td>{{ reservation.ter.nom }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deleteReservation(reservation.id)">
+              Supprimer
+            </button>
+          </td>
+        </tr>
+        <tr *ngIf="reservations.length === 0">
+          <td colspan="7" class="text-center text-muted">Aucune réservation trouvée.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

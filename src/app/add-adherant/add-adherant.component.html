@@ -1,0 +1,29 @@
+<div class="container mt-4">
+    <h3>Ajouter un Adhérent</h3>
+    <form (ngSubmit)="addAdherant()">
+      <div class="mb-3">
+        <label for="nom" class="form-label">Nom</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nom"
+          [(ngModel)]="newAdherant.nom"
+          name="nom"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          [(ngModel)]="newAdherant.email"
+          name="email"
+          required
+        />
+      </div>
+      <button   type="submit" class="btn btn-primary">Ajouter Adhérent</button>
+    </form>
+  </div>
+  

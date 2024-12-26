@@ -1,0 +1,43 @@
+
+<div class="container">
+
+    <div class="row mt-2" >
+        <div class="col-12">
+            <div class="card bg-info text-white">
+                <div class="card-header">
+                    <h1>Campus Sportif ESSAT  <font size="5pt" > (Espace Administrateur) </font></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="row mt-2" >
+        <div class="col-12">	
+		   <div class="alert alert-warning" >
+            <button (click)="logout()">Logout</button>
+		   </div>			
+        </div>
+    </div>
+    <div class="row" style="margin-top:10px;">
+        <div class="col-3">
+            <div class="list-group">
+				<a routerLink="/terrain" class="list-group-item list-group-item-action active">
+                    <span class="fa fa-th-large"></span>
+                   Gestion des Terrains                  
+                </a>
+                <a routerLink="/adherant" class="list-group-item list-group-item-action ">
+                    <span class="fa fa-th-large"></span>
+                   Gestion des Adhérants 
+                </a>
+                <a routerLink="/reservation"  class="list-group-item list-group-item-action">
+                    <span class="fa fa-th-large"></span>
+                    Gestion des Réservations 
+                </a>                
+            </div>
+        </div>
+        <div class="col-9" > 
+        <router-outlet></router-outlet>
+        </div>
+
+    </div>
+
+</div>

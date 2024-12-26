@@ -1,0 +1,82 @@
+<div class="container mt-4">
+   
+  
+    <!-- Liste des terrains -->
+    <div class="card">
+      <div class="card-header bg-success">
+        <h5>Liste des Terrains</h5>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped table-hover">
+          <thead >
+            <tr>
+              <th>#</th>
+              <th>Nom</th>
+              <th>Surface</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let terrain of terr; index as i">
+              <td>{{ terrain.id }}</td>
+              <td>{{ terrain.nom }}</td>
+              <td>{{ terrain.surface }}</td>
+              <td>
+                <button
+                  class="btn btn-danger btn-sm"
+                  (click)="deleteTerrain(terrain.id)"
+                >
+                  Supprimer
+                </button>
+              </td>
+            </tr>
+            <tr *ngIf="terr.length === 0">
+              <td colspan="4" class="text-center text-muted">
+                Aucun terrain trouvé.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+   <!-- Formulaire pour ajouter un terrain -->
+   <div class="card mb-4">
+    <div class="card-header bg-primary text-white">
+      <h5>Ajouter un Nouveau Terrain</h5>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="addTerrain()" class="row g-3">
+        <div class="col-md-6">
+          <label for="nom" class="form-label">Nom du Terrain</label>
+          <input
+            [(ngModel)]="newTerrain.nom"
+            type="text"
+            id="nom"
+            name="nom"
+            class="form-control"
+            placeholder="Ex: Stade Central"
+            required
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="surface" class="form-label">Surface</label>
+          <input
+            [(ngModel)]="newTerrain.surface"
+            type="text"
+            id="surface"
+            name="surface"
+            class="form-control"
+            placeholder="Ex: 500m²"
+            required
+          />
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-success">Ajouter Terrain</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+ 
